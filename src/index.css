@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* Attendance App Design System - Mobile First, Clean & Educational */
+
+@layer base {
+  :root {
+    /* Background & Surface */
+    --background: 195 20% 98%;
+    --foreground: 200 25% 10%;
+    
+    /* Cards & Popovers */
+    --card: 0 0% 100%;
+    --card-foreground: 200 25% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 25% 10%;
+    
+    /* Primary - Teal/Cyan for educational trust */
+    --primary: 187 72% 38%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Soft slate */
+    --secondary: 200 18% 94%;
+    --secondary-foreground: 200 25% 25%;
+    
+    /* Muted - Subtle grays */
+    --muted: 200 15% 92%;
+    --muted-foreground: 200 10% 45%;
+    
+    /* Accent - Warm amber for highlights */
+    --accent: 38 92% 50%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Success - For attendance confirmation */
+    --success: 152 69% 40%;
+    --success-foreground: 0 0% 100%;
+    
+    /* Destructive */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Borders & Inputs */
+    --border: 200 15% 88%;
+    --input: 200 15% 88%;
+    --ring: 187 72% 38%;
+    
+    --radius: 0.75rem;
+    
+    /* Calendar specific */
+    --calendar-today: 187 72% 38%;
+    --calendar-selected: 187 72% 45%;
+    --calendar-has-class: 38 92% 50%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(187 72% 38%) 0%, hsl(192 80% 45%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(195 20% 98%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(152 69% 40%) 0%, hsl(160 70% 45%) 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px hsl(200 25% 10% / 0.05);
+    --shadow-md: 0 4px 12px hsl(200 25% 10% / 0.08);
+    --shadow-lg: 0 8px 24px hsl(200 25% 10% / 0.12);
+    --shadow-glow: 0 0 20px hsl(187 72% 38% / 0.3);
+    
+    /* Sidebar - keeping for compatibility */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 187 72% 38%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 195 20% 95%;
+    --sidebar-accent-foreground: 200 25% 15%;
+    --sidebar-border: 200 15% 88%;
+    --sidebar-ring: 187 72% 38%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-success {
+    background: var(--gradient-success);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 20px);
+  }
+  
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+}
